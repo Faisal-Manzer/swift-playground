@@ -69,3 +69,12 @@ and my age = \(myAge)
 I can add 2 + 4 = \(2+4)
 """
 print(longLongQuote)
+
+// Declaring Optional String
+var optionalString: String? = "This is optional value"
+//print(optionalString)
+// prints Optional("This is optional value")
+// printing an optional string gives warning
+// Expression implicitly coerced from 'String?' to Any
+
+
