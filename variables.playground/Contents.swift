@@ -55,4 +55,17 @@ print(myAgeLine)
 var myAgeLineWithSlash = "My age is \(myAge)"
 print(myAgeLineWithSlash)
 
+// Trying to perform calculation under slash
+var experementWithFloatUnderSlash = "This is experement to add 2 + 5.6 = \(2+5.6)"
+print(experementWithFloatUnderSlash)
+var experementSecond = "PIE*2 = \(pi*2)"
+print(experementSecond)
 
+// Trying to write long long qoute
+var longLongQuote = """
+
+U do know my name is "Faisal Manzer"
+and my age = \(myAge)
+I can add 2 + 4 = \(2+4)
+"""
+print(longLongQuote)
