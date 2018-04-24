@@ -96,4 +96,21 @@ func faisal(_ lodeddata: String) -> Bool{
 }
 print(ajaxLoad("http://www.Faisal-Manzer.in", data: "ok", onload: faisal))
 
+// exprement from the documentation
+// Rewrite the closure to return zero for all odd numbers.
+// im returnng square for even numbers
+var num = [2, 4, 6, 3]
+var nume = num.map({(num: Int) -> Int in
+    if num%2 != 0 {
+        return 0
+    }
+    return num*num
+})
+printArray(nume)
 
+let mappedNum = num.map({num in num*3})
+printArray(mappedNum)
+
+// directly from documentaion
+let sortedNumbers = num.sorted { $0 > $1 }
+print(sortedNumbers)
