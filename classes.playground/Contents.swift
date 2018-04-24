@@ -59,10 +59,26 @@ class Rectangle{
         let breadth = breadth ?? self.breadth
         return length*breadth
     }
+    
+    func showAll(){
+        print("length: \(length)")
+        print("breadth: \(breadth)")
+        print("Area: \(area())")
+    }
 }
 
 class Square: Rectangle{
     var side = 0
+    var perimeter: Int {
+        get{
+            return side*2
+        }
+        set(newTryName) {
+            side = newTryName / 2
+            // name newValue is eplicit
+            // newTryName is delclared dircectly without type because we have declared type
+        }
+    }
     init(_ side: Int){
 //        self.length = length
 //        self.breadth = breadth
@@ -76,8 +92,12 @@ class Square: Rectangle{
     // i want an expreiment
     func area(side: Int? = nil) -> Int{
         let side = side ?? self.side
-        print("Used Square")
+//        print("Used Square")
         return side*side
+    }
+    override func showAll() {
+        print("Side: \(side)")
+        print("Area: \(area())")
     }
 }
 
@@ -97,3 +117,34 @@ print("Area using Rectangle \(square.area(length: 10, breadth: 10))")
 // find other method to implement it
 // ----------------
 
+//square.showAll()
+// called before overwriting
+// prints
+//length: 10
+//breadth: 10
+//Area: 100
+
+square.showAll()
+
+print(square.perimeter)
+square.perimeter = 30
+print(square.side)
+
+// willSet and didSet not practiced but understood any time we can get refrence
+
+// tring optional intance value
+var optionalSquare: Square? = Square(15)
+//let sideLength = optionalSquare.side
+// gives error: Value of optional type 'Square?' not unwrapped; did you mean to use '!' or '?'?
+// because i didnt used ?
+//print(sideLength)
+
+var sideLength = optionalSquare?.side
+//print(sideLength)
+// gives warning Expression implicitly coerced from 'Int?' to Any
+// prints Optional(15)
+print(sideLength!)
+// prints 15
+//sideLength = nil
+//print(sideLength!)
+// gives Fatal error: Unexpectedly found nil while unwrapping an Optional value
